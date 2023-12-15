@@ -1,0 +1,5 @@
+azure-ai-ml
+pandas
+numpy
+python-dotenv
+azureml-opendatasets

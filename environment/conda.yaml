@@ -1,0 +1,10 @@
+name: many_models
+  - conda-forge
+  - defaults
+  - jupyter
+dependencies:
+  - python=3.8
+  - pip
+  - ipykernel
+  - pip:
+    - -r requirements.txt

@@ -1,3 +1,9 @@
+# .vscode folder
+.vscode/
+
+# env file
+.env
+
 # Data Directory
 data/
 
