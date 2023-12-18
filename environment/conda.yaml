@@ -1,10 +1,10 @@
 name: many_models
+channels:
   - conda-forge
-  - defaults
-  - jupyter
 dependencies:
   - python=3.8
-  - pip
-  - ipykernel
+  - numpy=1.21.2
+  - pip=21.2.4
+  - pandas>=1.1,<1.2
   - pip:
     - -r requirements.txt

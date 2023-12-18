@@ -1,5 +1,8 @@
 azure-ai-ml
-pandas
-numpy
+azure-cli
+azure-identity
+azureml-fsspec
+ipykernel
+mltable
 python-dotenv
 azureml-opendatasets
