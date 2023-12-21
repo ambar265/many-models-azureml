@@ -2,7 +2,8 @@ azure-ai-ml
 azure-cli
 azure-identity
 azureml-fsspec
+scikit-learn
 ipykernel
 mltable
 python-dotenv
-azureml-opendatasets
+azureml-mlflow
