@@ -46,7 +46,7 @@ def run(input_data, mini_batch_context):
     model_description = f"GradientBoostingRegressor with lagging orders {lagging_orders} for store_brand = f{model_name}"
     print(f"Running train.py for...{model_name}")
 
-    with mlflow.start_run(run_name=f"train_{model_name}",
+    with mlflow.start_run(run_name=f"train_n_reg_{model_name}",
                           nested=False,
                           tags={"brand": f"{brand}", "store": f"{store}"}
                         ) as train_run:
@@ -118,13 +118,12 @@ def run(input_data, mini_batch_context):
         mlflow.sklearn.save_model(reg, relative_path)
     
         print(f"Model saved. Registering {model_name} to AML model registry...")
-        with mlflow.start_run(run_name=f"register_{model_name}", nested=True) as child_run:
-            # mlflow.set_tag("parent_id", train_run().info.run_id)
-            mlflow.sklearn.log_model(sk_model=reg,
-                                     registered_model_name=model_name,
-                                     artifact_path=relative_path
-                                     )
-            # mlflow.register_model(model_uri=relative_path, name=model_name)
-            print(f"Run completed for {model_name}")
+        # mlflow.set_tag("parent_id", train_run().info.run_id)
+        mlflow.sklearn.log_model(sk_model=reg,
+                                    registered_model_name=model_name,
+                                    artifact_path=relative_path
+                                )
+        # mlflow.register_model(model_uri=relative_path, name=model_name)
+        print(f"Run completed for {model_name}")
 
     return []
