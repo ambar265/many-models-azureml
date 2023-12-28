@@ -6,4 +6,5 @@ scikit-learn
 ipykernel
 mltable
 python-dotenv
+mlflow
 azureml-mlflow
