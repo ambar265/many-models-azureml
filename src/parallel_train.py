@@ -11,6 +11,8 @@ from sklearn.ensemble import GradientBoostingRegressor
 
 def init():
 
+    mlflow.start_run()
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--drop_cols", type=str)
@@ -46,11 +48,10 @@ def run(input_data, mini_batch_context):
     model_description = f"GradientBoostingRegressor with lagging orders {lagging_orders} for store_brand = f{model_name}"
     print(f"Running train.py for...{model_name}")
 
-    with mlflow.start_run(run_name=f"train_n_reg_{model_name}",
-                          nested=False,
-                          tags={"brand": f"{brand}", "store": f"{store}"}
-                        ) as train_run:
+    
+    with mlflow.start_run(run_name=f"{brand}_{store}_job", nested=True) as train_run:
         
+        mlflow.set_tags({"brand": f"{brand}", "store": f"{store}"})
         mlflow.sklearn.autolog()
         print("Mlflow sklearn autologging enabled")
 
