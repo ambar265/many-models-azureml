@@ -1,4 +1,4 @@
-name: mm-training-env
+name: mm_remote
 channels:
   - conda-forge
 dependencies:
@@ -6,12 +6,17 @@ dependencies:
   - pip
   - pip:
       - azureml-mlflow
+      - mlflow
       - mltable>=1.2.0
       - azureml-dataset-runtime[pandas,fuse]
       - azureml-telemetry
       - pandas
+      - numpy
+      - wheel
       - pillow
-      - azureml-core
-      - scikit-learn~=0.20.0
+      - azure-ai-ml
+      - azure-identity
       - cloudpickle==1.1.1
       - tensorflow==2.1.4
+      - ipykernel
+      - scikit-learn~=0.20.0
