@@ -18,7 +18,6 @@ def init():
     parser.add_argument("--drop_cols", type=str)
     parser.add_argument("--target_col", type=str)
     parser.add_argument("--date_col", type=str)
-    parser.add_argument("--lagging_orders", type=str)
     parser.add_argument("--model_folder", type=str)
     parser.add_argument("--partition_keys", type=str)
 
@@ -29,9 +28,6 @@ def init():
 
     global date_col
     date_col = args.date_col
-
-    global lagging_orders
-    lagging_orders = [int(i) for i in args.lagging_orders.split(",")]
 
     global model_folder
     model_folder = args.model_folder
@@ -45,7 +41,7 @@ def run(input_data, mini_batch_context):
     store = mini_batch_context.partition_key_value['Store']
     brand = mini_batch_context.partition_key_value['Brand']
     model_name = f"{store}_{brand}"
-    model_description = f"GradientBoostingRegressor with lagging orders {lagging_orders} for store_brand = f{model_name}"
+    model_description = f"GradientBoostingRegressor for store_brand = f{model_name}"
     print(f"Running train.py for...{model_name}")
 
     
@@ -71,24 +67,11 @@ def run(input_data, mini_batch_context):
         input_data = input_data.assign(Week_Year=input_data.index.isocalendar().week.values)
         input_data = input_data.drop(columns=drop_cols, errors="ignore")
 
-        # data lagging
-        max_lag_order = max(lagging_orders)
-        train_tail = input_data.iloc[-max_lag_order:]
-        column_order = train_tail.columns
-        data_trans = input_data.copy()
-
-        ## Make the lag features
-        for lag_order in lagging_orders:
-            data_trans["lag_" + str(lag_order)] = data_trans[target_col].shift(lag_order)
-
-        data_trans = data_trans.loc[input_data.index]
-        data_trans = data_trans.dropna()
-
         # traning & evaluation
-        features = data_trans.columns.drop(target_col)
+        features = input_data.columns.drop(target_col)
 
-        X = data_trans[features].values
-        y = data_trans[target_col].values
+        X = input_data[features].values
+        y = input_data[target_col].values
 
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.05, random_state=12, shuffle=False

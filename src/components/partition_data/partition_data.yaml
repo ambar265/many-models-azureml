@@ -3,7 +3,7 @@ $schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.jso
 type: command
 
 name: partition_data
-display_name: Partition input data by keys
+display_name: Partition data by keys
 version: 1
 
 inputs:
