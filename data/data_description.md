@@ -1,4 +1,0 @@
-### Simulated Orange Juice Sales
-The primary dataset is a subset of the a dataset from the [Dominick's / University of Chicago Booth](https://www.chicagobooth.edu/research/kilts/research-data/dominicks) repository. The dataset includes extra simulated data to simultaneously train many of models on Azure Machine Learning. In this specific subset we will deal with about 33 stores and 3 brands of orange juice. (99 total models)  
-  
-Access to the full 3,991 store dataset can be found here: [AzureML Open Datasets](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-oj-sales-simulated?tabs=azureml-opendatasets)
