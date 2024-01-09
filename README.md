@@ -8,6 +8,9 @@
 ### Motivation
 The goal of of this repository is to provide a thorough example of a scaleable and repeatable frameowrk for training, deployment, and inference of a 'Many Model' architecture using Azure Machine Learning.
 
+## Notebooks
+Follow demo notebooks in order to step through the process of developing and deploying repeatable, parallel, training and inferencing using Azure Machine Learning
+
 ### Data
 The primary dataset is a subset of the a dataset from the [Dominick's / University of Chicago Booth](https://www.chicagobooth.edu/research/kilts/research-data/dominicks) repository. The dataset includes extra simulated data to simultaneously train many of models on Azure Machine Learning. In this specific subset we will deal with about 33 stores and 3 brands of orange juice. (99 total models)  
   
