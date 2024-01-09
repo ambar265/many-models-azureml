@@ -8,3 +8,4 @@ scikit-learn~=1.0.0
 azure-ai-ml
 azure-identity
 python-dotenv
+fsspec

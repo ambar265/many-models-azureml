@@ -62,9 +62,9 @@ def run(input_data, mini_batch_context):
     store = mini_batch_context.partition_key_value['Store']
     brand = mini_batch_context.partition_key_value['Brand']
     model_name = f"{store}_{brand}"
+    output_data = input_data.copy()
+    print(f"Output dataframe schema: {output_data.columns}")
 
-    # Prepare Data
-    input_data = input_data.drop(columns=drop_cols, errors="ignore")
 
     experiment_ids = list(map(lambda x: mlflow_client.get_experiment_by_name(x).experiment_id, experiment_names))
 
@@ -104,11 +104,10 @@ def run(input_data, mini_batch_context):
     predictions = reg.predict(X_test)
 
     # Combine prediction with input_data
-    output_data = input_data.copy()
     output_data['predictions'] = predictions
 
     # Save predictions to output dir
-    relative_path = os.path.join(output_dir, "predictions/")
+    relative_path = os.path.join(output_dir + '/')
 
     print(f"Relative path: {relative_path}...")
     if not os.path.exists(relative_path):

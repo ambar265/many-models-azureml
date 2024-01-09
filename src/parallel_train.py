@@ -102,12 +102,10 @@ def run(input_data, mini_batch_context):
         mlflow.sklearn.save_model(reg, relative_path)
     
         print(f"Model saved. Registering {model_name} to AML model registry...")
-        # mlflow.set_tag("parent_id", train_run().info.run_id)
         mlflow.sklearn.log_model(sk_model=reg,
                                     registered_model_name=model_name,
                                     artifact_path=relative_path
                                 )
-        # mlflow.register_model(model_uri=relative_path, name=model_name)
         print(f"Run completed for {model_name}")
 
     return []
