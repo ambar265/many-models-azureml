@@ -1,8 +1,11 @@
-azure-ai-ml
-azure-cli
-azure-identity
-azureml-fsspec
 ipykernel
-mltable
+azureml-mlflow
+mlflow
+mltable>=1.2.0
+pillow
+wheel
+scikit-learn~=1.0.0
+azure-ai-ml
+azure-identity
 python-dotenv
-azureml-opendatasets
+fsspec
