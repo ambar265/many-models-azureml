@@ -10,6 +10,5 @@ pillow
 azure-ai-ml
 azure-identity
 cloudpickle==1.1.1
-tensorflow==2.1.4
 ipykernel
 scikit-learn~=0.20.0
