@@ -1,4 +1,4 @@
-# Customer Many Models Forecasting with Azure Machine Learning
+# Custom Many Models Forecasting with Azure Machine Learning
 
 ## Overview
  Training, deployment, and inference of a high volume of machine learning models is a common use case. One example of this scenario is forecasting, where an organization creates hundres of thousands or millions of independent models to predict volumes or revenues at a hyper-specific level. 
