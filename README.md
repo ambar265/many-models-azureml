@@ -6,7 +6,7 @@
  This case comes with challenges in scalability. The ability to execute a machine learning development lifecyle for hundreds of thousands of models requires a parallel and repeatable framework.
 
 ## Motivation
-The goal of of this repository is to provide a thorough example of a scaleable and repeatable frameowrk for training, deployment, and inference of a 'Many Model' architecture using Azure Machine Learning.
+The goal of of this repository is to provide a thorough example of a scaleable and repeatable framework for training, deployment, and inference of a 'Many Model' architecture using Azure Machine Learning.
 
 ## Notebooks
 Follow demo notebooks in order to step through the process of developing and deploying repeatable, parallel, training and inferencing using Azure Machine Learning
