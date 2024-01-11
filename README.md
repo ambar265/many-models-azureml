@@ -17,7 +17,7 @@ The primary dataset is a subset of the a dataset from the [Dominick's / Universi
 Access to the full 3,991 store dataset can be found here: [AzureML Open Datasets](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-oj-sales-simulated?tabs=azureml-opendatasets)
 
 ## Helpful Links and Documentation
-[Managing Pipeline and Component Inputs and Outputs](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-manage-inputs-outputs-pipeline?view=azureml-api-2&tabs=cli)
-[Query and Compare Experiment Runs with Azure MLFlow](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-track-experiments-mlflow?view=azureml-api-2)
-[Azure ML Client Docs](https://learn.microsoft.com/en-us/python/api/azure-ai-ml/azure.ai.ml.mlclient?view=azure-python)
-[MLFlow Client Docs](https://mlflow.org/docs/latest/python_api/mlflow.client.html)
+[Managing Pipeline and Component Inputs and Outputs](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-manage-inputs-outputs-pipeline?view=azureml-api-2&tabs=cli)  
+[Query and Compare Experiment Runs with Azure MLFlow](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-track-experiments-mlflow?view=azureml-api-2)  
+[Azure ML Client Docs](https://learn.microsoft.com/en-us/python/api/azure-ai-ml/azure.ai.ml.mlclient?view=azure-python)  
+[MLFlow Client Docs](https://mlflow.org/docs/latest/python_api/mlflow.client.html)  
