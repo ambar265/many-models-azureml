@@ -4,7 +4,7 @@ trigger:
 - none
 
 variables:
-  service-connection: 'machine-learning-connection' # replace with your service connection name
+  service-connection: 'demo-mlops' # replace with your service connection name
   resource-group: 'DP-100' # replace with your resource group name
   workspace: 'dp-101' # replace with your workspace name
 
